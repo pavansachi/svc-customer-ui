@@ -4,19 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { CustomerService } from './customer/customer.service';
+import { CustomerComponent } from './customer/customer.component';
+import { InfoComponent } from './customer/info/info.component';
+import { SearchComponent } from './customer/search/search.component';
+import { ListComponent } from './customer/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransactionListComponent
+    ListComponent,
+    CustomerComponent,
+    InfoComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ CustomerService
+     ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

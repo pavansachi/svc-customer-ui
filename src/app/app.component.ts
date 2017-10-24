@@ -10,4 +10,11 @@ export class AppComponent {
   id = 1;
   amount = 100;
 
+  reportData='';
+
+  onReportData(evt) {
+    console.log('got the data here', evt);
+    this.reportData = evt;
+  }
+
 }
