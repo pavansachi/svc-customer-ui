@@ -31,7 +31,11 @@ export class CustomerComponent implements OnInit {
   transactions=[];
 
   onReportData(evt) {
-    console.log('got the data here', evt);
+    
+    if (!!!evt.customer || !!!evt.month || !!!evt.year) {
+      alert('Required arguments are missing');
+      return;
+    }
 
     this.service.getTransactions(evt.customer,evt.month,evt.year)
     .subscribe(
