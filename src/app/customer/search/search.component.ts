@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit,EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,7 +9,8 @@ export class SearchComponent implements OnInit {
 
   constructor() { }
 
-  customerIds = [1,2,3,4];
+  @Input()
+  customerIds=[];
 
   months = [ { name: 'Jan', value: 0},
   { name: 'Feb', value: 1},

@@ -7,10 +7,17 @@ export class CustomerService {
 
   constructor(private http: Http) { }
 
+  getCustomerList() {
+        
+       return this.http.get(
+         '/transactions/config'
+        )
+       .map(res => res.json());
+    
+  }
+
   getTransactions(id, month, year) {
-    
-       console.log(this.http);
-    
+        
        return this.http.get(
          `/transactions/customer?id=${id}&mon=${month}&y=${year}`
         )

@@ -8,7 +8,21 @@ import { CustomerService } from './customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor(private service: CustomerService) { }
+  constructor(private service: CustomerService) { 
+
+    this.service.getCustomerList()
+    .subscribe(
+        rec => { 
+          this.customerIds = rec.data; 
+        },
+         err => {
+             // Log errors if any
+             console.log(err);
+         });
+
+  }
+
+  customerIds=[];
 
   ngOnInit() {
   }
